@@ -1,0 +1,77 @@
+[
+{
+  "model": "posts.post",
+  "pk": 2,
+  "fields": {
+    "title": "Picasso blue self portrait",
+    "caption": "I figured my first post on Kollektiv should of course be a self-portrait 💁‍♂️. Here I am at the age of 20 in my 🔵 blue 🔵 period.",
+    "created_at": "2021-09-08T16:11:02.073Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 3,
+  "fields": {
+    "title": "Dali - Geopoliticus",
+    "caption": "This is something I painted when I was in America in the '40s and symbolises the changing geopolitics of the time, but today it's simply giving me Monday feels 💀",
+    "created_at": "2021-09-08T16:23:42.233Z"
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 4,
+  "fields": {
+    "title": "Gentileschi - Judith",
+    "caption": "I completed this painting not long after a very traumatic experience. Incredibly cathartic while I awaited real justice 🔥 🔥 🔥 Literally #slaying 💪",
+    "created_at": "2021-09-08T16:33:50.053Z"
+  }
+},
+{
+  "model": "posts.image",
+  "pk": 1,
+  "fields": {
+    "image_link": "https://www.pablopicasso.org/images/paintings/self-portrait.jpg",
+    "post": 2
+  }
+},
+{
+  "model": "posts.image",
+  "pk": 2,
+  "fields": {
+    "image_link": "https://upload.wikimedia.org/wikipedia/en/c/cd/Geopoliticus_Child_Watching_the_Birth_of_the_New_Man.jpg",
+    "post": 3
+  }
+},
+{
+  "model": "posts.image",
+  "pk": 3,
+  "fields": {
+    "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg/300px-Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg",
+    "post": 4
+  }
+},
+{
+  "model": "posts.tag",
+  "pk": 1,
+  "fields": {
+    "tag": "selfportrait",
+    "post": 2
+  }
+},
+{
+  "model": "posts.tag",
+  "pk": 2,
+  "fields": {
+    "tag": "surreal",
+    "post": 3
+  }
+},
+{
+  "model": "posts.tag",
+  "pk": 3,
+  "fields": {
+    "tag": "girlpower",
+    "post": 4
+  }
+}
+]
