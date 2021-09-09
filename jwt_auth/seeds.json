@@ -1,0 +1,134 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$bJYRttFuuibi9Fu6bu8phV$6lddzuYcffz63Oz/ndhQhccMFkoDJRuSm32UWmMUZVI=",
+    "last_login": "2021-09-09T10:28:59.729Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-09-09T10:28:39.583Z",
+    "full_name": "",
+    "email": "admin@email.com",
+    "bio": "",
+    "profile_image": "",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$toSVb0YE2YIG7PLnK9PebJ$veeqbNWl+KqeN45yAVCSBnIS/T+YNxKeMDtlNDcBbio=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "TheLifeOfPablo",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-09T11:13:53.431Z",
+    "full_name": "Pablo Picasso",
+    "email": "pablop@email.com",
+    "bio": "Everything you can image is real 🌱",
+    "profile_image": "https://erickimphotography.com/blog/wp-content/uploads/2016/10/pablo-picasso-battle-empire-art-03.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$0B6AHaAPnsomx792EbCQuf$ierobkKaB55muqJ0qZsRGfAhuTuVw3m6IF++GK/8Mlc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "TheSecretLifeOfSalvadorDali",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-09T11:30:23.877Z",
+    "full_name": "Salvador Dali",
+    "email": "salvadord@email.com",
+    "bio": "I don't do drugs. I am drugs.",
+    "profile_image": "https://www.dalipaintings.com/images/salvador-dali.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "artemisia",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ARTemisia",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-09T11:33:13.125Z",
+    "full_name": "Artemisia Gentileschi",
+    "email": "artemisiag@email.com",
+    "bio": "I'll show you what a woman can do",
+    "profile_image": "https://www.nationalgallery.org.uk/media/25638/ng6671_432px.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$9PKVyLxzEMgJQI7TkbShgw$MAbywpRvSckBf0iQzzqH3bPgKxkVppTL8JLXqQtivIg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "BardBarbs",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-09T11:57:39.906Z",
+    "full_name": "Barbara Hepworth",
+    "email": "barbarah@email.com",
+    "bio": "🌊 🐚  ⚪",
+    "profile_image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Barbara_Hepworth_%281966%29_by_Erling_Mandelmann.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$giZC3Fj7FJNdMBwpLJmQM5$6si79xwUOXnkqjLEM3jhWVM20VozJ/ipR62QYvm6FkY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "SpiderWoman",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-09T12:01:21.161Z",
+    "full_name": "Louise Bourgeois",
+    "email": "louiseb@email.com",
+    "bio": "I transform hate into love 🖤",
+    "profile_image": "https://uploads8.wikiart.org/temp/6fb301b8-5cdf-4705-9329-c77140abcf7a.jpg!Portrait.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
