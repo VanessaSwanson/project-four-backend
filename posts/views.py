@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.generics import (
     ListCreateAPIView, RetrieveUpdateDestroyAPIView
 )
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
 from .models import Image, Post, Comment
 from .serializers import PostSerializer, CommentSerializer, ImageSerializer
@@ -16,16 +17,19 @@ class PostListView(ListCreateAPIView):
     ''' List View for /posts INDEX CREATE'''
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
 class PostDetailView(RetrieveUpdateDestroyAPIView):
     ''' Detail View for /posts/:postId SHOW UPDATE DELETE'''
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
 # IMAGES
 
 class ImageListView(APIView):
     ''' List View for /posts/:postId/images CREATE images'''
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def post(self, request, post_pk):
         request.data['post'] = post_pk
@@ -37,6 +41,7 @@ class ImageListView(APIView):
 
 class ImageDetailView(APIView):
     ''' DELETE COMMENT VIEW '''
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def delete(self, _request, **kwargs):
         image_pk = kwargs['image_pk']
@@ -53,6 +58,7 @@ class ImageDetailView(APIView):
 
 class CommentListView(APIView):
     ''' List View for /posts/:postId/comments CREATE comments'''
+    permission_classes = (IsAuthenticated, )
 
     def post(self, request, post_pk):
         request.data['post'] = post_pk
@@ -64,6 +70,7 @@ class CommentListView(APIView):
 
 class CommentDetailView(APIView):
     ''' DELETE COMMENT VIEW '''
+    permission_classes = (IsAuthenticated, )
 
     def delete(self, _request, **kwargs):
         comment_pk = kwargs['comment_pk']
