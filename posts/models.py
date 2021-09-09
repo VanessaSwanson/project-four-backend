@@ -19,13 +19,13 @@ class Image(models.Model):
     def __str__(self):
         return f'{self.post} - {self.id}'
 
-class Tag(models.Model):
-    tag = models.CharField(max_length=50)
-    post = models.ForeignKey(
-        Post,
-        related_name='tags',
-        on_delete=models.CASCADE
-    )
+# class Tag(models.Model):
+#     tag = models.CharField(max_length=50)
+#     post = models.ForeignKey(
+#         Post,
+#         related_name='tags',
+#         on_delete=models.CASCADE
+#     )
 
-    def __str__(self):
-        return f'{self.tag} - {self.post} - {self.id}'
+#     def __str__(self):
+#         return f'{self.tag} - {self.post} - {self.id}'
