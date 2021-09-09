@@ -2,10 +2,18 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
-from posts.serializers import PostSerializer, ImageSerializer, CommentSerializer
+from .models import models
+from posts.models import Post
+
+from posts.serializers import NestedUserSerializer, PostSerializer, ImageSerializer, CommentSerializer
 # import django.contrib.auth.password_validation as validation
 
 User = get_user_model()
+
+class NestedPostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ('id', 'caption', 'owner')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -39,9 +47,12 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         fields ='__all__'
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    posts_made = PostSerializer(many=True)
+    posts_made = NestedPostSerializer(many=True)
     images_made = ImageSerializer(many=True)
     comments_made = CommentSerializer(many=True)
+    liked_posts = NestedPostSerializer(many=True)
+    followed_by = NestedUserSerializer(many=True)
+    following = NestedUserSerializer(many=True)
 
     class Meta:
         model = User

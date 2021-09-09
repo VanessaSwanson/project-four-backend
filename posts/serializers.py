@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Post, Image, Comment
+from .models import models, Post, Image, Comment
 
 User = get_user_model()
 

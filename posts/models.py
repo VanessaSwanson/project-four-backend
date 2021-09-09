@@ -6,7 +6,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     liked_by = models.ManyToManyField(
         'jwt_auth.User',
-        related_name='liked_characters',
+        related_name='liked_posts',
         blank=True
     )
     owner = models.ForeignKey(
