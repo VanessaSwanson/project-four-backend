@@ -19,6 +19,18 @@ class Image(models.Model):
     def __str__(self):
         return f'{self.post} - {self.id}'
 
+class Comment(models.Model):
+    text = models.TextField(max_length=300)
+    created_at = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey(
+        Post,
+        related_name='comments',
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return f'{self.post} - {self.id}'
+
 # class Tag(models.Model):
 #     tag = models.CharField(max_length=50)
 #     post = models.ForeignKey(
