@@ -25,6 +25,27 @@ class PostDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = PostSerializer
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
+class PostLikeView(APIView):
+    ''' Adds likes to characters or removes if already liked '''
+
+    permission_classes = (IsAuthenticated, )
+
+    def post(self, request, post_pk):
+        try:
+            post_to_like = Post.objects.get(pk=post_pk)
+        except Post.DoesNotExist:
+            raise NotFound()
+
+        if request.user in post_to_like.liked_by.all():
+            post_to_like.liked_by.remove(request.user.id)
+        else:
+            post_to_like.liked_by.add(request.user.id)
+
+        serialized_post = PostSerializer(post_to_like)
+
+        return Response(serialized_post.data, status=status.HTTP_202_ACCEPTED)
+
+
 # IMAGES
 
 class ImageListView(APIView):
