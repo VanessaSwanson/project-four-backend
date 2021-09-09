@@ -6,8 +6,8 @@ from rest_framework.generics import (
     ListCreateAPIView, RetrieveUpdateDestroyAPIView
 )
 
-from .models import Post, Comment
-from .serializers import PostSerializer, CommentSerializer
+from .models import Image, Post, Comment
+from .serializers import PostSerializer, CommentSerializer, ImageSerializer
 
 
 # POSTS
@@ -21,6 +21,32 @@ class PostDetailView(RetrieveUpdateDestroyAPIView):
     ''' Detail View for /posts/:postId SHOW UPDATE DELETE'''
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+# IMAGES
+
+class ImageListView(APIView):
+    ''' List View for /posts/:postId/images CREATE images'''
+
+    def post(self, request, post_pk):
+        request.data['post'] = post_pk
+        created_image = ImageSerializer(data=request.data)
+        if created_image.is_valid():
+            created_image.save()
+            return Response(created_image.data, status=status.HTTP_201_CREATED)
+        return Response(created_image.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+class ImageDetailView(APIView):
+    ''' DELETE COMMENT VIEW '''
+
+    def delete(self, _request, **kwargs):
+        image_pk = kwargs['image_pk']
+        try:
+            image_to_delete = Image.objects.get(pk=image_pk)
+            image_to_delete.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Image.DoesNotExist:
+            raise NotFound(detail='Image Not Found')
+
 
 
 # COMMENTS
