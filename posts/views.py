@@ -3,7 +3,9 @@ from rest_framework.response import Response
 from rest_framework.exceptions import NotFound
 from rest_framework.views import APIView
 from rest_framework.generics import (
-    ListCreateAPIView, RetrieveUpdateDestroyAPIView
+    CreateAPIView, 
+    ListAPIView,
+    RetrieveUpdateDestroyAPIView
 )
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
@@ -13,18 +15,23 @@ from .serializers import PostSerializer, CommentSerializer, PopulatedPostSeriali
 
 # POSTS
 
-class PostListView(ListCreateAPIView):
-    ''' List View for /posts INDEX CREATE'''
-    permission_classes = (IsAuthenticatedOrReadOnly, )
+class PostCreateView(CreateAPIView):
+    ''' List View for /posts/create CREATE'''
+    permission_classes = (IsAuthenticated, )
 
     def post(self, request):
         serialized_post = PostSerializer(data=request.data)
         print(serialized_post)
         print(request.user.id)
+        request.data['owner'] = request.user.id
         if serialized_post.is_valid():
+
             serialized_post.save()
             return Response(serialized_post.data)
         return Response(serialized_post.errors)
+
+class PostListView(ListAPIView):
+    ''' List View for /posts/create CREATE'''
 
     def get(self, request):
         posts = Post.objects.all()
@@ -58,35 +65,6 @@ class PostLikeView(APIView):
         return Response(serialized_post.data, status=status.HTTP_202_ACCEPTED)
 
 
-# IMAGES
-
-# class ImageListView(APIView):
-#     ''' List View for /posts/:postId/images CREATE images'''
-#     permission_classes = (IsAuthenticatedOrReadOnly, )
-
-#     def post(self, request, post_pk):
-#         request.data['post'] = post_pk
-#         created_image = ImageSerializer(data=request.data)
-#         if created_image.is_valid():
-#             created_image.save()
-#             return Response(created_image.data, status=status.HTTP_201_CREATED)
-#         return Response(created_image.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
-
-# class ImageDetailView(APIView):
-#     ''' DELETE COMMENT VIEW '''
-#     permission_classes = (IsAuthenticatedOrReadOnly, )
-
-#     def delete(self, _request, **kwargs):
-#         image_pk = kwargs['image_pk']
-#         try:
-#             image_to_delete = Image.objects.get(pk=image_pk)
-#             image_to_delete.delete()
-#             return Response(status=status.HTTP_204_NO_CONTENT)
-#         except Image.DoesNotExist:
-#             raise NotFound(detail='Image Not Found')
-
-
-
 # COMMENTS
 
 class CommentListView(APIView):
@@ -95,7 +73,9 @@ class CommentListView(APIView):
 
     def post(self, request, post_pk):
         request.data['post'] = post_pk
+        request.data['owner'] = request.user.id
         created_comment = CommentSerializer(data=request.data)
+
         if created_comment.is_valid():
             created_comment.save()
             return Response(created_comment.data, status=status.HTTP_201_CREATED)

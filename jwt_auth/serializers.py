@@ -6,19 +6,20 @@ from posts.models import Post
 
 from posts.serializers import (
     NestedUserSerializer,
-    # ImageSerializer,
     CommentSerializer
 )
-# import django.contrib.auth.password_validation as validation
 
 User = get_user_model()
 
 class NestedPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'caption', 'owner')
+        fields = ('id', 'image', 'caption', 'liked_by', 'owner', 'comments')
 
 class UserSerializer(serializers.ModelSerializer):
+    posts_made = NestedPostSerializer(many=True)
+    followed_by = NestedUserSerializer(many=True)
+    following = NestedUserSerializer(many=True)
     class Meta:
         model=User
         fields='__all__'
