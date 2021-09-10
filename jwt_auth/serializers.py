@@ -5,8 +5,8 @@ from django.core.exceptions import ValidationError
 from posts.models import Post
 
 from posts.serializers import (
-    NestedUserSerializer, 
-    ImageSerializer, 
+    NestedUserSerializer,
+    # ImageSerializer,
     CommentSerializer
 )
 # import django.contrib.auth.password_validation as validation
@@ -51,7 +51,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
 class UserProfileSerializer(serializers.ModelSerializer):
     posts_made = NestedPostSerializer(many=True)
-    images_made = ImageSerializer(many=True)
+    # images_made = ImageSerializer(many=True)
     comments_made = CommentSerializer(many=True)
     liked_posts = NestedPostSerializer(many=True)
     followed_by = NestedUserSerializer(many=True)
