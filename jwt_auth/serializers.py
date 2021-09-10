@@ -2,10 +2,13 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
-from .models import models
 from posts.models import Post
 
-from posts.serializers import NestedUserSerializer, PostSerializer, ImageSerializer, CommentSerializer
+from posts.serializers import (
+    NestedUserSerializer, 
+    ImageSerializer, 
+    CommentSerializer
+)
 # import django.contrib.auth.password_validation as validation
 
 User = get_user_model()

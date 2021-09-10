@@ -1,9 +1,11 @@
 from django.db import models
+from taggit.managers import TaggableManager
 
 class Post(models.Model):
     title = models.CharField(max_length=50, unique=True, blank=True)
     caption = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
+    tags = TaggableManager()
     liked_by = models.ManyToManyField(
         'jwt_auth.User',
         related_name='liked_posts',
@@ -12,7 +14,7 @@ class Post(models.Model):
     owner = models.ForeignKey(
         'jwt_auth.User',
         related_name='posts_made',
-        on_delete=models.CASCADE,
+        on_delete=models.CASCADE
     )
 
     def __str__(self):
@@ -50,14 +52,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'{self.post} - {self.id}'
-
-# class Tag(models.Model):
-#     tag = models.CharField(max_length=50)
-#     post = models.ForeignKey(
-#         Post,
-#         related_name='tags',
-#         on_delete=models.CASCADE
-#     )
-
-#     def __str__(self):
-#         return f'{self.tag} - {self.post} - {self.id}'

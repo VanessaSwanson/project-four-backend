@@ -1,3 +1,12 @@
 {
-  "python.linting.pylintEnabled": true
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#f6d55c",
+      "titleBar.activeBackground": "#f6d55c",
+      "titleBar.inactiveBackground": "#f6d55c",
+      "statusBar.foreground": "#000",
+      "titleBar.inactiveForeground": "#000",
+      "titleBar.activeForeground": "#000"
+    },
+    "window.title": "BACKEND Kollektiv",
+    "python.linting.pylintEnabled": true
 }

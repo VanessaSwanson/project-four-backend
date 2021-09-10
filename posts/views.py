@@ -15,9 +15,21 @@ from .serializers import PostSerializer, CommentSerializer, ImageSerializer
 
 class PostListView(ListCreateAPIView):
     ''' List View for /posts INDEX CREATE'''
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
     permission_classes = (IsAuthenticatedOrReadOnly, )
+
+    def post(self, request):
+        serialized_post = PostSerializer(data=request.data)
+        print(serialized_post)
+        print(request.user.id)
+        if serialized_post.is_valid():
+            serialized_post.save()
+            return Response(serialized_post.data)
+        return Response(serialized_post.errors)
+
+    def get(self, request):
+        posts = Post.objects.all()
+        serialized_posts = PostSerializer(posts, many=True)
+        return Response(serialized_posts.data)
 
 class PostDetailView(RetrieveUpdateDestroyAPIView):
     ''' Detail View for /posts/:postId SHOW UPDATE DELETE'''

@@ -11,4 +11,4 @@ class User(AbstractUser):
         'jwt_auth.User',
         related_name='following',
         blank=True
-    )
+    )  
