@@ -25,7 +25,7 @@ class PostSerializer(serializers.ModelSerializer):
 class NestedPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'image', 'caption', 'liked_by', 'owner', 'comments')
+        fields = ('id', 'image', 'caption', 'liked_by', 'owner', 'comments', 'created_at')
 
 class PopulatedUserSerializer(serializers.ModelSerializer):
     posts_made = NestedPostSerializer(many=True)
