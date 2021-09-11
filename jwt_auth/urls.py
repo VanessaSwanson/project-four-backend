@@ -5,7 +5,8 @@ from .views import (
     ProfileView, 
     UserListView, 
     UserDetailView, 
-    UserFollowView
+    UserFollowView,
+    EditProfileView
 )
 
 urlpatterns = [
@@ -14,5 +15,6 @@ urlpatterns = [
     path('profile/', ProfileView.as_view()),
     path('users/', UserListView.as_view()),
     path('<int:pk>/', UserDetailView.as_view()),
+    path('<int:pk>/edit/', EditProfileView.as_view()),
     path('<int:user_pk>/follow/', UserFollowView.as_view())
 ]

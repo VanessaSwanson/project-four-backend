@@ -31,7 +31,7 @@ class PostCreateView(CreateAPIView):
         return Response(serialized_post.errors)
 
 class PostListView(ListAPIView):
-    ''' List View for /posts/create CREATE'''
+    ''' List View for /posts INDEX'''
 
     def get(self, request):
         posts = Post.objects.all()
@@ -41,7 +41,7 @@ class PostListView(ListAPIView):
 class PostDetailView(RetrieveUpdateDestroyAPIView):
     ''' Detail View for /posts/:postId SHOW UPDATE DELETE'''
     queryset = Post.objects.all()
-    serializer_class = PostSerializer
+    serializer_class = PopulatedPostSerializer
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
 class PostLikeView(APIView):

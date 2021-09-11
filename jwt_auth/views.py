@@ -6,7 +6,7 @@ from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from rest_framework.generics import (
-    ListAPIView, RetrieveUpdateDestroyAPIView
+    ListAPIView, RetrieveUpdateDestroyAPIView, UpdateAPIView
 )
 from django.contrib.auth import get_user_model
 from django.conf import settings
@@ -15,6 +15,7 @@ import jwt
 
 from .serializers import UserProfileSerializer, UserRegisterSerializer, UserSerializer
 User = get_user_model()
+
 
 class UserListView(ListAPIView):
     ''' List View for /auth/users INDEX'''
@@ -25,6 +26,8 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
     ''' Detail View for /auth/:userId SHOW UPDATE DELETE'''
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
 
 class RegisterView(APIView):
 
@@ -72,6 +75,15 @@ class ProfileView(APIView):
     def get(self, request):
         serialized_user = UserProfileSerializer(request.user)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+
+class EditProfileView(UpdateAPIView):
+    ''' Detail View for /auth/:userId SHOW UPDATE DELETE'''
+    permission_classes = (IsAuthenticated, )
+
+    queryset = User.objects.all()
+    serializer_class = UserRegisterSerializer
+
 
 class UserFollowView(APIView):
     ''' Adds likes to characters or removes if already liked '''
