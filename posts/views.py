@@ -25,10 +25,9 @@ class PostCreateView(CreateAPIView):
         print(request.user.id)
         request.data['owner'] = request.user.id
         if serialized_post.is_valid():
-
             serialized_post.save()
-            return Response(serialized_post.data)
-        return Response(serialized_post.errors)
+            return Response(serialized_post.data, status=status.HTTP_201_CREATED)
+        return Response(serialized_post.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 class PostListView(ListAPIView):
     ''' List View for /posts INDEX'''

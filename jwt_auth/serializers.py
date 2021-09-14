@@ -28,6 +28,12 @@ class UserSerializer(serializers.ModelSerializer):
         model=User
         fields='__all__'
 
+class UserEditSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model=User
+        fields = ('username', 'full_name', 'email', 'profile_image', 'bio')
+
 class UserRegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     password_confirmation = serializers.CharField(write_only=True)

@@ -13,7 +13,7 @@ from django.conf import settings
 import jwt
 
 
-from .serializers import UserProfileSerializer, UserRegisterSerializer, UserSerializer
+from .serializers import UserProfileSerializer, UserRegisterSerializer, UserSerializer, UserEditSerializer
 User = get_user_model()
 
 
@@ -82,7 +82,7 @@ class EditProfileView(UpdateAPIView):
     permission_classes = (IsAuthenticated, )
 
     queryset = User.objects.all()
-    serializer_class = UserRegisterSerializer
+    serializer_class = UserEditSerializer
 
 
 class UserFollowView(APIView):

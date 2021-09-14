@@ -4,7 +4,7 @@ class Post(models.Model):
     title = models.CharField(max_length=50, unique=True, blank=True)
     caption = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
-    image = models.CharField(max_length=300, blank=True)
+    image = models.CharField(max_length=300)
     liked_by = models.ManyToManyField(
         'jwt_auth.User',
         related_name='liked_posts',
