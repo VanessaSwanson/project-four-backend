@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'jwt_auth',
     'posts',
-    'taggit',
 ]
 
 MIDDLEWARE = [

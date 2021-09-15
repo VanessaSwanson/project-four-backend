@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
 from posts.models import Post
+from .models import Message
 
 from posts.serializers import (
     PostSerializer,
@@ -11,6 +12,18 @@ from posts.serializers import (
 )
 
 User = get_user_model()
+
+class UserMessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=User
+        fields='__all__'
+
+class MessageSerializer(serializers.ModelSerializer):
+    sender = UserMessageSerializer()
+    receiver = UserMessageSerializer()
+    class Meta:
+        model=Message
+        fields = '__all__'
 
 class NestedPostSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,14 +35,15 @@ class PopulatedCommentSerializer(CommentSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     posts_made = NestedPostSerializer(many=True)
+    messages_made = MessageSerializer(many=True)
+    messages_received = MessageSerializer(many=True)
     followed_by = NestedUserSerializer(many=True)
     following = NestedUserSerializer(many=True)
     class Meta:
         model=User
         fields='__all__'
 
-class UserEditSerializer(serializers.ModelSerializer):
-    
+class UserEditSerializer(serializers.ModelSerializer): 
     class Meta:
         model=User
         fields = ('username', 'full_name', 'email', 'profile_image', 'bio')

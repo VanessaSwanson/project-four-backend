@@ -10,5 +10,22 @@ class User(AbstractUser):
     followed_by = models.ManyToManyField(
         'jwt_auth.User',
         related_name='following',
-        blank=True
-    )  
+        blank=True,
+    )
+
+class Message(models.Model):
+    message = models.TextField(max_length=1000)
+    created_at = models.DateTimeField(auto_now_add=True)
+    sender = models.ForeignKey(
+        User,
+        related_name='messages_made',
+        on_delete=models.CASCADE
+    )
+    receiver = models.ForeignKey(
+        User,
+        related_name='messages_received',
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return f'{self.sender} - {self.receiver} - {self.created_at}'

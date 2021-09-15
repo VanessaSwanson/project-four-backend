@@ -6,15 +6,21 @@ from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from rest_framework.generics import (
-    ListAPIView, RetrieveUpdateDestroyAPIView, UpdateAPIView
+    CreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView, UpdateAPIView
 )
 from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
 
-
-from .serializers import UserProfileSerializer, UserRegisterSerializer, UserSerializer, UserEditSerializer
+from .serializers import (
+    MessageSerializer,
+    UserProfileSerializer, 
+    UserRegisterSerializer, 
+    UserSerializer, 
+    UserEditSerializer,
+    MessageSerializer)
 User = get_user_model()
+
 
 
 class UserListView(ListAPIView):
@@ -26,8 +32,6 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
     ''' Detail View for /auth/:userId SHOW UPDATE DELETE'''
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-
 
 class RegisterView(APIView):
 
@@ -104,3 +108,18 @@ class UserFollowView(APIView):
         serialized_user = UserSerializer(user_to_follow)
 
         return Response(serialized_user.data, status=status.HTTP_202_ACCEPTED)
+
+class UserMessageCreateView(CreateAPIView):
+    ''' List View for auth/receiver_pk/message/ CREATE'''
+    permission_classes = (IsAuthenticated, )
+
+    def post(self, request, receiver_pk):
+        serialized_message = MessageSerializer(data=request.data)
+        print(serialized_message)
+        print(request.user.id)
+        request.data['sender'] = request.user.id
+        request.data['receiver'] = receiver_pk
+        if serialized_message.is_valid():
+            serialized_message.save()
+            return Response(serialized_message.data, status=status.HTTP_201_CREATED)
+        return Response(serialized_message.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
