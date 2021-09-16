@@ -1,7 +1,7 @@
 from django.db import models
 
 class Post(models.Model):
-    title = models.CharField(max_length=50, unique=True, blank=True)
+    title = models.CharField(max_length=50, blank=True)
     caption = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.CharField(max_length=300)
