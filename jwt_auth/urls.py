@@ -1,10 +1,10 @@
 from django.urls import path
 from .views import (
-    RegisterView, 
-    LoginView, 
-    ProfileView, 
-    UserListView, 
-    UserDetailView, 
+    RegisterView,
+    LoginView,
+    ProfileView,
+    UserListView,
+    UserDetailView,
     UserFollowView,
     EditProfileView,
     UserMessageCreateView
@@ -18,5 +18,5 @@ urlpatterns = [
     path('<int:pk>/', UserDetailView.as_view()),
     path('<int:pk>/edit/', EditProfileView.as_view()),
     path('<int:user_pk>/follow/', UserFollowView.as_view()),
-    path('<int:receiver_pk>/message/', UserMessageCreateView.as_view()) 
+    path('<int:receiver_pk>/message/', UserMessageCreateView.as_view())
 ]

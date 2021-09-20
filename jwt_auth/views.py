@@ -13,10 +13,9 @@ from django.conf import settings
 import jwt
 
 from .serializers import (
-    MessageSerializer,
-    UserProfileSerializer, 
-    UserRegisterSerializer, 
-    UserSerializer, 
+    UserProfileSerializer,
+    UserRegisterSerializer,
+    UserSerializer,
     UserEditSerializer,
     MessageSerializer)
 User = get_user_model()
@@ -114,11 +113,11 @@ class UserMessageCreateView(CreateAPIView):
     permission_classes = (IsAuthenticated, )
 
     def post(self, request, receiver_pk):
+        request.data['sender'] = request.user.id
+        request.data['receiver'] = receiver_pk
         serialized_message = MessageSerializer(data=request.data)
         print(serialized_message)
         print(request.user.id)
-        request.data['sender'] = request.user.id
-        request.data['receiver'] = receiver_pk
         if serialized_message.is_valid():
             serialized_message.save()
             return Response(serialized_message.data, status=status.HTTP_201_CREATED)

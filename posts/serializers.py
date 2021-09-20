@@ -31,8 +31,7 @@ class PopulatedUserSerializer(serializers.ModelSerializer):
     posts_made = NestedPostSerializer(many=True)
     class Meta:
         model = User
-        fields = '__all__'
-        
+        fields = '__all__'      
 
 class PopulatedPostSerializer(PostSerializer):
     comments = PopulatedCommentSerializer(many=True, read_only=True)
