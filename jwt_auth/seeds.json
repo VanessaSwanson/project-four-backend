@@ -1,0 +1,458 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$GqFgyRNb8UaTmIQr0Bfh8W$xJrTWRBdXPIem92Dw8RsJJ5vLoCYM7ZvLOx7CHSED9o=",
+    "last_login": "2021-09-20T10:43:39.200Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-09-09T14:13:33Z",
+    "full_name": "Admin",
+    "email": "admin@email.com",
+    "bio": "Admin",
+    "profile_image": "https://res.cloudinary.com/diibkxlsn/image/upload/c_crop,g_center,h_375,w_375/v1631775884/kollektiv/Scream3_ph0qqr.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$GrsgrPn4G7dHxzrpsCPg0y$hcUilEugpfw2T3mgk025TJT3JTQUdogUbxUXCZHzPMI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "TheLifeOfPablo",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-09T14:14:30Z",
+    "full_name": "Pablo Picasso",
+    "email": "pablop@email.com",
+    "bio": "Everything you can image is real 🌱",
+    "profile_image": "https://res.cloudinary.com/diibkxlsn/image/upload/v1631776161/kollektiv/Pablo_Picasso_aowpla.png",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      3,
+      5,
+      6,
+      10
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$qoMgmKzqRA1xZFughr3Ltl$R+gM1MxmY7H3XeHxoHJ6oDQYdbTtL928kbujf39cpgY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "TheSecretLifeOfSalvadorDali",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-09T15:34:29Z",
+    "full_name": "Salvador Dali",
+    "email": "salvadord@email.com",
+    "bio": "I don't do drugs. I am drugs.",
+    "profile_image": "https://www.biography.com/.image/t_share/MTIwNjA4NjMzNTM4MDUzNjQ0/salvador-dali-40389-2-402.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      2,
+      6,
+      9,
+      10
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$lqmumlOfhtFjB3REHwGazb$peUBgLXVTlMoK34aaT37Qfo3aMohwmajaY8PCV7J8TI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ARTemisia",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T08:45:55Z",
+    "full_name": "Artemisia Gentileschi",
+    "email": "artemisiag@email.com",
+    "bio": "TESTING NEW EDIT PROFILE VIEW AGAIN",
+    "profile_image": "https://www.nationalgallery.org.uk/media/25638/ng6671_432px.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      2,
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$pjYeD4CB4HVPGnOrGjCUqP$804kaAJpez8Zd/gqVs7smKcN+tJ+Z2RO9zQOnsVLmsk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "BardBarbs",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T13:05:11Z",
+    "full_name": "Barbara Hepworth",
+    "email": "barbarah@email.com",
+    "bio": "Edited profile",
+    "profile_image": "https://res.cloudinary.com/diibkxlsn/image/upload/c_crop,g_center,h_394,w_394/v1631776569/kollektiv/http__com.ft.imagepublish.prod.s3.amazonaws.com_dadfc5f2-1545-11e5-9509-00144feabdc0_gpkdie.webp",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      2,
+      3,
+      4,
+      9,
+      10,
+      16
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$C5m0yd98sUrcIrkZCXIjq6$U1nRI4hAXXVJTtb/1BVnd6WhdmcE7OfH2AkTcfch/OI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "SpiderWoman",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T19:07:37Z",
+    "full_name": "Louise Bourgeois",
+    "email": "louiseb@email.com",
+    "bio": "I transform hate into love 🖤",
+    "profile_image": "https://res.cloudinary.com/diibkxlsn/image/upload/c_crop,g_face:center,h_374,w_374/v1631776833/kollektiv/6fb301b8-5cdf-4705-9329-c77140abcf7a.jpg_Portrait_b9pqw9.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      4,
+      9,
+      10
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$zEtbO5yxov2j08kkGH5u6D$yMmszcUi7mHUm1Pt5e/lt07gljvVbZb7rDNcMojjZEc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "RachelWhiteread",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-12T18:22:30Z",
+    "full_name": "Rachel Whiteread",
+    "email": "rachelw@email.com",
+    "bio": "Sculptor, dame, third sister",
+    "profile_image": "https://res.cloudinary.com/diibkxlsn/image/upload/c_crop,g_face:center,h_534,w_534/v1631470682/kollektiv/r8b2t2vy2cuj22turdro.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      2,
+      4,
+      9,
+      10
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$6pMIyIXuCrVsd3R6CG27IB$HpOJm+77kGTSRcBc8E+wxZc3+PTS7++eCq0xkjPXVW4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "AngelOfTheNorth",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-12T21:20:22Z",
+    "full_name": "Antony Gormley",
+    "email": "antonyg@email.com",
+    "bio": "Art is the means by which we communicate what it feels like to be alive.",
+    "profile_image": "http://res.cloudinary.com/diibkxlsn/image/upload/v1631481556/kollektiv/ydlyft7pdvxcswdik1to.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      2,
+      3,
+      7,
+      10
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$FgHs5sbcJYx47a7Rz5oLZY$wFqi/hWXuHPTaLNCKlhYNMqsisP2mV8jCw3vn2mstW4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "DadaDesign",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-13T16:19:50Z",
+    "full_name": "Sophie Taueber-Arp",
+    "email": "sophiet@email.com",
+    "bio": "Blurring the boundaries of art and design",
+    "profile_image": "https://res.cloudinary.com/diibkxlsn/image/upload/c_crop,g_face:center,h_600,w_600/v1631776347/kollektiv/platehighres_02.06.07_0_dhrb8t.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      2,
+      3,
+      4,
+      5,
+      9
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$TrseeWEISVQ39LqV8x4RVF$JaAD2FadDFdaq+sLcGREcJFPds8b30X5cDpk8IuHS/w=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "KerryJames",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-16T08:02:05Z",
+    "full_name": "Kerry James Marshall",
+    "email": "kerryjm@email.com",
+    "bio": "Interrogating Western art history",
+    "profile_image": "https://res.cloudinary.com/diibkxlsn/image/upload/c_crop,g_face:center,h_280,w_280/v1631779215/kollektiv/kjm_felixclay_headshot_bgovoh.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      2,
+      4,
+      6,
+      10,
+      12,
+      16
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$yw7cK0DvhXgjgFz8RBy1eK$dvdmUN0YV9deZ8pHzPhTWygNExNtGUqVhJXHO12lEEk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Nasreen",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-16T08:17:00.544Z",
+    "full_name": "Nasreen Mohamedi",
+    "email": "nasreenm@email.com",
+    "bio": "Giving you that abstract lyrical 🔥",
+    "profile_image": "https://res.cloudinary.com/diibkxlsn/image/upload/c_crop,g_face:center,h_669,w_669/v1631779984/kollektiv/portrait_nasreen-mohamedi_credit-photo-richard-bartholemew_aware_women-artists_artistes-femmes_axjdob.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$iODZ5m7BDhfYOasMK0iZBQ$lqPB7sGoC4grHlHDqZ+Lt7QCMAajZyAiB2M8m6b/Wus=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "FrancisB",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-16T13:20:17.350Z",
+    "full_name": "Francis Bacon",
+    "email": "francisb@email.com",
+    "bio": "\"Champagne for my real friends, real pain for my sham friends\" 🍾 - UPDATED",
+    "profile_image": "http://res.cloudinary.com/diibkxlsn/image/upload/v1631798399/kollektiv/k1bnnn2d1bplo1u6lhe1.jpg",
+    "is_private": false,
+    "groups": [],
+    "user_permissions": [],
+    "followed_by": [
+      2
+    ]
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 3,
+  "fields": {
+    "message": "Hi there!",
+    "created_at": "2021-09-15T13:11:49.730Z",
+    "sender": 2,
+    "receiver": 3
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 4,
+  "fields": {
+    "message": "Helloooooo",
+    "created_at": "2021-09-15T13:12:02.558Z",
+    "sender": 2,
+    "receiver": 4
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 5,
+  "fields": {
+    "message": "How are you?",
+    "created_at": "2021-09-15T13:16:42.004Z",
+    "sender": 2,
+    "receiver": 4
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 6,
+  "fields": {
+    "message": "Loved your latest post, Pablo!",
+    "created_at": "2021-09-15T13:50:57.762Z",
+    "sender": 4,
+    "receiver": 2
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 7,
+  "fields": {
+    "message": "How's everything going?",
+    "created_at": "2021-09-15T13:52:26.459Z",
+    "sender": 3,
+    "receiver": 2
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 8,
+  "fields": {
+    "message": "Me again",
+    "created_at": "2021-09-15T13:57:32.530Z",
+    "sender": 3,
+    "receiver": 2
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 9,
+  "fields": {
+    "message": "Pablo! Let's go for a drink this weekend!",
+    "created_at": "2021-09-20T10:44:12.011Z",
+    "sender": 16,
+    "receiver": 2
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 21,
+  "fields": {
+    "message": "Absolutely, my friend! French House?",
+    "created_at": "2021-09-20T13:02:06.496Z",
+    "sender": 2,
+    "receiver": 16
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 31,
+  "fields": {
+    "message": "I'm well thank you, Salvador",
+    "created_at": "2021-09-20T13:58:21.352Z",
+    "sender": 2,
+    "receiver": 3
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 32,
+  "fields": {
+    "message": "How are you?",
+    "created_at": "2021-09-20T13:59:28.106Z",
+    "sender": 2,
+    "receiver": 3
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 33,
+  "fields": {
+    "message": "Would be good to see you soon!",
+    "created_at": "2021-09-20T14:03:27.671Z",
+    "sender": 2,
+    "receiver": 3
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 38,
+  "fields": {
+    "message": "Kerry, I absolutely love your work! If you fancy grabbing a coffee sometime, let me know ☕\nPablo",
+    "created_at": "2021-09-20T16:30:23.396Z",
+    "sender": 2,
+    "receiver": 11
+  }
+},
+{
+  "model": "jwt_auth.message",
+  "pk": 39,
+  "fields": {
+    "message": "Francis, shall we grab a coffee soon? ☕",
+    "created_at": "2021-09-20T16:32:57.728Z",
+    "sender": 2,
+    "receiver": 16
+  }
+}
+]
