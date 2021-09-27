@@ -8,6 +8,10 @@ django = "*"
 djangorestframework = "*"
 djangorestframework-camel-case = "*"
 pyjwt = "*"
+python-dotenv = "*"
+dj-database-url = "*"
+django-on-heroku = "*"
+django-heroku = "*"
 
 [dev-packages]
 pylint = "*"
